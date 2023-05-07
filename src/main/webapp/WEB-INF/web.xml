@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
+  <servlet>
+    <description></description>
+    <display-name>Control</display-name>
+    <servlet-name>Control</servlet-name>
+    <servlet-class>edu.ucam.servlets.Control</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Control</servlet-name>
+    <url-pattern>/Control</url-pattern>
+  </servlet-mapping>
+  <display-name>footballManager</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <listener>
+    <listener-class>edu.ucam.listerners.InicioApp</listener-class>
+  </listener>
+  <filter>
+    <display-name>InicioDeSesion</display-name>
+    <filter-name>InicioDeSesion</filter-name>
+    <filter-class>edu.ucam.filters.InicioDeSesion</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>InicioDeSesion</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>ZonaPrivada</display-name>
+    <filter-name>ZonaPrivada</filter-name>
+    <filter-class>edu.ucam.filters.ZonaPrivada</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ZonaPrivada</filter-name>
+    <url-pattern>/Control</url-pattern>
+  </filter-mapping>
+</web-app>
